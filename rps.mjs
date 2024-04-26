@@ -1,10 +1,9 @@
-// let humanChoice = console.readline();
-// let humanChoice = prompt("Enter your choice ( rock | paper | sissor ) : ");
-// const readline = require("readline");
-
 import readline from 'readline';
 
-for(let round=1; round <= 5; round++) {
+let userScore = 0;
+let computerScore = 0;
+
+for(let round = 1; round <= 5; round++) {
 	console.log("\nRound: "+ round);
 
 	function promptUser(query) {
@@ -27,5 +26,38 @@ for(let round=1; round <= 5; round++) {
 	let randInt = randNum(0, choiceArr.length - 1);
 	let computerChoice = choiceArr[randInt];
 
+	function gameLogic(userInput, computerInput) {
+		if (userInput === computerInput) {
+			return "Both choices are same. No score counts for this round"
+		} else if (userInput === "rock") {
+			if (computerInput === "paper") {
+				return "Computer Won" 
+			} else {
+				return "You Won"
+			}
+		} else if (userInput === "paper") {
+			if (computerInput === "sissor") {
+				return "Computer Won" 
+			} else {
+				return "You Won"
+			} 
+		} else if (userInput === "sissor") {
+			if (computerInput === "rock") {
+				return "Computer Won" 
+			} else {
+				return "You Won"
+			}
+		}
+	}
+
 	console.log("your choice is " + userChoice + " & computer's choice is " + computerChoice);
+	let roundResult = gameLogic(userChoice, computerChoice);
+
+	if (roundResult === "Computer Won") {
+		computerScore++
+	} else if (roundResult === "You Won") {
+		userScore++
+	}
+	
+	console.log(roundResult + ". | Your Score = " + userScore + " | Computer Score = " + computerScore); 
 }
