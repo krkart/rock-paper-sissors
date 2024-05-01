@@ -51,7 +51,7 @@ for(let round = 1; round <= 5; round++) {
 	}
 
 	console.log("your choice is " + userChoice + " & computer's choice is " + computerChoice);
-	let roundResult = gameLogic(userChoice, computerChoice);
+	let roundResult = gameLogic(userChoice.toLowerCase(), computerChoice);
 
 	if (roundResult === "Computer Won") {
 		computerScore++
@@ -59,5 +59,5 @@ for(let round = 1; round <= 5; round++) {
 		userScore++
 	}
 	
-	console.log(roundResult + ". | Your Score = " + userScore + " | Computer Score = " + computerScore); 
+	console.log(roundResult + ". || Your Score = " + userScore + " || Computer Score = " + computerScore); 
 }
