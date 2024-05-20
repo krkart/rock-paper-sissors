@@ -29,24 +29,13 @@ for(let round = 1; round <= 5; round++) {
 	function gameLogic(userInput, computerInput) {
 		if (userInput === computerInput) {
 			return "Both choices are same. No score counts for this round"
-		} else if (userInput === "rock") {
-			if (computerInput === "paper") {
-				return "Computer Won" 
-			} else {
-				return "You Won"
-			}
-		} else if (userInput === "paper") {
-			if (computerInput === "sissor") {
-				return "Computer Won" 
-			} else {
-				return "You Won"
-			} 
-		} else if (userInput === "sissor") {
-			if (computerInput === "rock") {
-				return "Computer Won" 
-			} else {
-				return "You Won"
-			}
+		} else if (((userInput === "rock") && (computerInput === "paper")) ||
+				  ((userInput === "paper") && (computerInput === "sissor")) ||
+				  ((userInput === "sissor") && (computerInput === "rock")))
+		{
+			return "Computer Won" 
+		} else {
+			return "You Won"
 		}
 	}
 
