@@ -48,5 +48,5 @@ for(let round = 1; round <= 5; round++) {
 		userScore++
 	}
 	
-	console.log(roundResult + ". || Your Score = " + userScore + " || Computer Score = " + computerScore); 
+	console.log(roundResult + ".\nYour Score = " + userScore + ". Computer Score = " + computerScore + "."); 
 }
