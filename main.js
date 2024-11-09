@@ -1,16 +1,15 @@
-/*
 let userScore = 0;
 let computerScore = 0;
 
+/*
 for(let round = 1; round <= 5; round++) {
  	console.log("\nRound: "+ round);
-
-	console.log("Enter your choice ( rock || paper || sissor ) : ");
 */
-	
+
 	let userChoice = document.querySelector('.userChoice');
 	let compChoice = document.querySelector('.compChoice');
 	let result = document.querySelector('.result');
+	let score = document.querySelector('.score');
 
 	document.addEventListener('click', choice);
 
@@ -24,6 +23,7 @@ for(let round = 1; round <= 5; round++) {
 		let randInt = randNum(0, choiceArr.length);
 		let computerChoice = choiceArr[randInt];
 	
+		// Best practice with explanation, Ref: https://stackoverflow.com/a/56909452/6028958
 		if(e.target.classList.contains("chosen-btn")){
 		
 	//	function gameLogic(userInput, computerInput) {
@@ -39,17 +39,19 @@ for(let round = 1; round <= 5; round++) {
 			}
 			userChoice.textContent = e.target.value;
 			compChoice.textContent = computerChoice;
+
+			if (result.textContent === "Computer Won") {
+				computerScore++
+			} else if (result.textContent === "You Won") {
+				userScore++
+			}
+			
+			score.innerHTML = "<p>" + "Your Score = " + userScore + ". Computer Score = " + computerScore + "." + "</p>"
 		}
 	
 		// let roundResult = gameLogic(userChoice.textContent, computerChoice);
 	}
 
 	/*
-	if (roundResult === "Computer Won") {
-		computerScore++
-	} else if (roundResult === "You Won") {
-		userScore++
-	}
-	
-	console.log(roundResult + ".\nYour Score = " + userScore + ". Computer Score = " + computerScore + "."); 
+	 
 } */

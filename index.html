@@ -12,13 +12,28 @@
     <div class="container">
         <h2>Rock-Paper-Scissor Game</h2>
         <br>
-        <p>Choose your item to start the game.</p>
+        <p>Choose how many rounds you want to play</p>
+        <div class="playRound">
+            <h2>
+                Rounds = 
+                <select class="options">
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                    <option value="7">7</option>
+                    <option value="9">9</option>
+                </select>
+                <input type="submit" class="btn" value="Play">
+            </h2>
+        </div>
         <br>
-        <button class="chosen-btn" value="rock">ROCK</button>
-        <button class="chosen-btn" value="paper">PAPER</button>
-        <button class="chosen-btn" value="sissor">SISSOR</button>
+        <p>Pick your item to start the game</p>
+        <button class="chosen-btn btn" value="rock">ROCK</button>
+        <button class="chosen-btn btn" value="paper">PAPER</button>
+        <button class="chosen-btn btn" value="sissor">SISSOR</button>
         <br>
-        <p>You have chosen <span class="userChoice"></span>. Computer has chosen <span class="compChoice"></span>. <h3 class="result"></h3></span></p>   
+        <p>You have chosen <span class="userChoice">______</span>. Computer has chosen <span class="compChoice">______</span>.</p>
+        <h2 class="result"></h2>   
+        <div class="score"></div>
     </div>
 
     <script src="main.js"></script>

@@ -27,7 +27,16 @@ html, body {
     text-align: center;
   }
 
-  .chosen-btn {
+  .playRound {
+    display: inline-block;
+    vertical-align: auto;
+  }
+
+  .options{
+    font-size: larger;
+  }
+
+  .btn{
     position: relative;
     background-color: #000;
     border: none;
@@ -43,8 +52,12 @@ html, body {
     overflow: hidden;
     cursor: pointer;
   }
+
+  .btn:hover{
+    color: lightgreen;
+  }
   
-  .chosen-btn:after {
+  .btn:after{
     content: "";
     background: #f1f1f1;
     display: block;
@@ -57,7 +70,7 @@ html, body {
     transition: all 0.8s
   }
   
-  .chosen-btn:active:after {
+  .btn:active:after{
     padding: 0;
     margin: 0;
     opacity: 1;
