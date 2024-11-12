@@ -36,16 +36,17 @@ html, body {
     font-size: larger;
   }
 
-  .btn{
+  button{
     position: relative;
     background-color: #000;
     border: none;
+    border-radius: 50px;
     font-size: 20px;
     font-weight: bold;
     color: #FFFFFF;
     margin: 1px;
     padding: 10px;
-    width: 150px;
+    width: 140px;
     text-align: center;
     transition-duration: 0.4s;
     text-decoration: none;
@@ -53,11 +54,11 @@ html, body {
     cursor: pointer;
   }
 
-  .btn:hover{
+  button:hover{
     color: lightgreen;
   }
   
-  .btn:after{
+  button:after{
     content: "";
     background: #f1f1f1;
     display: block;
@@ -70,9 +71,27 @@ html, body {
     transition: all 0.8s
   }
   
-  .btn:active:after{
+  button:active:after{
     padding: 0;
     margin: 0;
     opacity: 1;
     transition: 0s
+  }
+
+  .gameResult {
+    display: flex;
+    justify-content: space-around;
+    margin: 25px 25px;
+    font-size: larger;
+    font-weight: 1000;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    color: #000;
+  }
+
+  .choices img {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+    height: 64px;
+    width: 64px;
   }

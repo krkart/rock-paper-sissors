@@ -12,27 +12,34 @@
     <div class="container">
         <h2>Rock-Paper-Scissor Game</h2>
         <br>
+
         <p>Choose how many rounds you want to play</p>
-        <div class="playRound">
-            <h2>
-                Rounds = 
-                <select class="rounds">
-                    <option disabled>Rounds</option>
-                    <option value="3">3</option>
-                    <option value="5">5</option>
-                    <option value="7">7</option>
-                    <option value="9">9</option>
-                </select>
-                <button type="submit" class="play-btn btn" value="play">PLAY</button>
-            </h2>
+        <div class="rounds">
+            <button value="3">Best of 3</button>
+            <button value="5">Best of 5</button>
+            <button value="7">Best of 7</button>
+            <button value="9">Best of 9</button>
         </div>
-        <br>
-        <p>Pick your item to start the game</p>
-        <button class="chosen-btn btn" value="rock">ROCK</button>
-        <button class="chosen-btn btn" value="paper">PAPER</button>
-        <button class="chosen-btn btn" value="sissor">SISSOR</button>
-        <br>
-        <p>You have chosen <span class="userChoice">______</span>. Computer has chosen <span class="compChoice">______</span>.</p>
+
+        <div class="choices">
+            <p>Pick your item to start the game</p>
+            <button class="chosen-btn" value="rock"><img src="./img/rock.png">ROCK</button>
+            <button class="chosen-btn" value="paper"><img src="./img/paper.png">PAPER</button>
+            <button class="chosen-btn" value="sissor"><img src="./img/sissor.png">SISSOR</button>
+        </div>
+
+        <div class="gameResult">
+            <div>
+                <h4>Your Choice:</h4>
+                <h4 class="userImg"></h4>
+                <h4 class="userChoice"></h4>
+            </div>
+            <div>
+                <h4>Computer's Choice:</h4>
+                <h4 class="compImg"></h4>
+                <h4 class="compChoice"></h4>
+            </div>
+        </div>
         <h2 class="result"></h2>   
         <div class="score"></div>
     </div>
