@@ -10,8 +10,9 @@
 
 <body>
     <div class="container">
-        <h2>Rock-Paper-Scissor Game</h2>
-        <br>
+        <div class="box">
+            <h2>Rock-Paper-Scissor Game</h2>
+        </div>
 
         <p>Choose how many rounds you want to play</p>
         <div class="rounds">
@@ -20,27 +21,28 @@
             <button value="7">Best of 7</button>
             <button value="9">Best of 9</button>
         </div>
+        <br>
 
+        <p>Pick your item to start the game</p>
         <div class="choices">
-            <p>Pick your item to start the game</p>
-            <button class="chosen-btn" value="rock"><img src="./img/rock.png">ROCK</button>
-            <button class="chosen-btn" value="paper"><img src="./img/paper.png">PAPER</button>
-            <button class="chosen-btn" value="sissor"><img src="./img/sissor.png">SISSOR</button>
+            <button class="pickBtn" value="rock"><img src="./img/rock.png">ROCK</button>
+            <button class="pickBtn" value="paper"><img src="./img/paper.png">PAPER</button>
+            <button class="pickBtn" value="sissor"><img src="./img/sissor.png">SISSOR</button>
         </div>
 
-        <div class="gameResult">
-            <div>
-                <h4>Your Choice:</h4>
-                <h4 class="userImg"></h4>
-                <h4 class="userChoice"></h4>
+        <div class="box">
+            <div class="gameResult">
+                <p>Your Choice:</p>
+                <p class="userImg"></p>
+                <p class="userChoice"></p>
             </div>
-            <div>
-                <h4>Computer's Choice:</h4>
-                <h4 class="compImg"></h4>
-                <h4 class="compChoice"></h4>
+            <div class="gameResult">
+                <p>Computer's Choice:</p>
+                <p class="compImg"></p>
+                <p class="compChoice"></p>
             </div>
         </div>
-        <h2 class="result"></h2>   
+        <h3 class="result"></h3>   
         <div class="score"></div>
     </div>
 

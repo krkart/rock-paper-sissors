@@ -7,7 +7,7 @@ html, body {
       background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
       background-size: 400% 400%;
       animation: gradient 15s ease infinite;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-family: sans-serif;
   }
   
   @keyframes gradient {
@@ -22,14 +22,13 @@ html, body {
       }
   }
 
+  p {
+    font-weight: bold;
+  }
+
   .container {
     margin: auto;
     text-align: center;
-  }
-
-  .playRound {
-    display: inline-block;
-    vertical-align: auto;
   }
 
   .rounds{
@@ -40,13 +39,13 @@ html, body {
     position: relative;
     background-color: #000;
     border: none;
-    border-radius: 50px;
-    font-size: 20px;
-    font-weight: bold;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 300;
     color: #FFFFFF;
     margin: 1px;
     padding: 10px;
-    width: 140px;
+    width: 100px;
     text-align: center;
     transition-duration: 0.4s;
     text-decoration: none;
@@ -55,7 +54,7 @@ html, body {
   }
 
   button:hover{
-    color: lightgreen;
+    color: #e73c7e;
   }
   
   button:after{
@@ -78,10 +77,25 @@ html, body {
     transition: 0s
   }
 
-  .gameResult {
+  .box {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+  }
+
+  h2 {
+    width: 400px;
+    height: 30px;
     margin: 25px 25px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+  }
+
+  .gameResult {
+    width: 210px;
+    height: 190px;
+    margin: 15px 25px;
+    padding: 0;
     font-size: larger;
     font-weight: 1000;
     background-color: rgba(0, 0, 0, 0.1);
@@ -89,9 +103,12 @@ html, body {
     color: #000;
   }
 
+  img {
+    height: 64px;
+    width: 64px;
+  }
+
   .choices img {
     -webkit-filter: invert(1);
     filter: invert(1);
-    height: 64px;
-    width: 64px;
   }
