@@ -16,18 +16,20 @@
 
         <p>Choose how many rounds you want to play</p>
         <div class="rounds">
-            <button value="3">Best of 3</button>
-            <button value="5">Best of 5</button>
-            <button value="7">Best of 7</button>
-            <button value="9">Best of 9</button>
+            <button value="3">best of 3</button>
+            <button value="5">best of 5</button>
+            <button value="7">best of 7</button>
+            <button value="9">best of 9</button>
         </div>
 
         <p>Pick your item to start the game</p>
         <div class="choices">
-            <button class="pickBtn" value="rock"><img src="./img/rock.png">ROCK</button>
-            <button class="pickBtn" value="paper"><img src="./img/paper.png">PAPER</button>
-            <button class="pickBtn" value="sissor"><img src="./img/sissor.png">SISSOR</button>
+            <button class="pickBtn" value="rock"><img src="./img/rock.png">rock</button>
+            <button class="pickBtn" value="paper"><img src="./img/paper.png">paper</button>
+            <button class="pickBtn" value="sissor"><img src="./img/sissor.png">sissor</button>
         </div>
+
+        <h4 class="result"></h4>   
 
         <div class="box">
             <div class="gameResult">
@@ -41,8 +43,9 @@
                 <p class="compChoice"></p>
             </div>
         </div>
-        <h3 class="result"></h3>   
-        <div class="score"></div>
+        <div class="score">
+            <p>Your score = 0. Computer score = 0.</p>
+        </div>
     </div>
 
     <script src="main.js"></script>
