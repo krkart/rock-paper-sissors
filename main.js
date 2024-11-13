@@ -59,26 +59,26 @@ function gameLogic(humanChoice, computerChoice) {
 		if ((computerScore === Math.ceil(((roundCount + 1) - tieCount) / 2)) && (computerScore != userScore)) {
 			const computerWin = document.createElement("div");
 			computerWin.classList.add("winner")
-			computerWin.innerHTML = `<h6>Final Result:</h6> <h2>Computer won with a ${computerScore - userScore} point lead!</h2>`
+			computerWin.innerHTML = `<h5>Final Result:</h5> <h2>Computer won by ${computerScore - userScore} point!</h2>`
 			score.appendChild(computerWin)
 			gameOver = true
 
 		} else if ((userScore === Math.ceil(((roundCount + 1) - tieCount) / 2)) && (userScore != computerScore)) {
 			const userWin = document.createElement("div");
 			userWin.classList.add("winner")
-			userWin.innerHTML = `<h6>Final Result:</h6> <h2>You won with a ${userScore - computerScore} point lead!</h2>`
+			userWin.innerHTML = `<h5>Final Result:</h5> <h2>You won by ${userScore - computerScore} point!</h2>`
 			score.appendChild(userWin)
 			gameOver = true
 		} else if ((userScore === Math.ceil(((roundCount + 1) - tieCount) / 2)) && (userScore === computerScore)) {
 			const userWin = document.createElement("div");
 			userWin.classList.add("winner")
-			userWin.innerHTML = `<h6>Final Result:</h6> <h2>It's a tie!</h2>`
+			userWin.innerHTML = `<h5>Final Result:</h5> <h2>It's a tie!</h2>`
 			score.appendChild(userWin)
 			gameOver = true
 		} else if ((computerScore === Math.ceil(((roundCount + 1) - tieCount) / 2)) && (computerScore === userScore)) {
 			const userWin = document.createElement("div");
 			userWin.classList.add("winner")
-			userWin.innerHTML = `<h6>Final Result:</h6> <h2>It's a tie!</h2>`
+			userWin.innerHTML = `<h5>Final Result:</h5> <h2>It's a tie!</h2>`
 			score.appendChild(userWin)
 			gameOver = true
 		}
