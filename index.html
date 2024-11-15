@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissor</title>
-    <link rel="stylesheet" href="main.css">
+
+    <link rel="stylesheet" href="./main.css">
+    <script defer src="./main.js"></script>
 </head>
 
 <body>
-    <div class="container">
+    <main>
         <div class="box">
             <h2>Rock-Paper-Scissor Game</h2>
         </div>
@@ -24,31 +26,60 @@
 
         <p>Pick your item to start the game</p>
         <div class="choices">
-            <button class="pickBtn" value="rock"><img src="./img/rock.png">rock</button>
-            <button class="pickBtn" value="paper"><img src="./img/paper.png">paper</button>
-            <button class="pickBtn" value="sissor"><img src="./img/sissor.png">sissor</button>
+            <button class="pickBtn" value="rock"><img src="./img/rock.png" />rock</button>
+            <button class="pickBtn" value="paper"><img src="./img/paper.png" />paper</button>
+            <button class="pickBtn" value="sissor"><img src="./img/sissor.png" />sissor</button>
         </div>
 
-        <h4 class="result"></h4>   
+        <h4 class="result"></h4>
 
         <div class="box">
             <div class="gameResult">
                 <p>Your Choice:</p>
-                <p class="userImg"></p>
+                <div class="userImg"></div>
                 <p class="userChoice"></p>
+            </div>
+            <div class="resultSign">
+                <h3>?</h3>
             </div>
             <div class="gameResult">
                 <p>Computer's Choice:</p>
-                <p class="compImg"></p>
+                <div class="compImg"></div>
                 <p class="compChoice"></p>
             </div>
         </div>
         <div class="score">
             <p>Your score = 0. Computer score = 0.</p>
         </div>
-    </div>
+        <div id="overlay" class="hide">
+            <div id="finalResult"></div>
+            <button onClick="window.location.reload();">Play Again</button>
+        </div>
+    </main>
 
-    <script src="main.js"></script>
+    <footer>
+        <p>
+            <small>Source Code © <time id="copyright-current-year">2024</time>
+                <a href="https://github.com/krkart">Karthikeyan</a>.
+                All Rights Reserved.
+            </small>
+        </p>
+    </footer>
+
+    <script>
+        function updateCopyright(initialYear) {
+            const copyright = document.getElementById('copyright-current-year');
+            if (copyright) {
+                const currYear = new Date().getFullYear();
+                if (currYear === initialYear) {
+                    copyright.textContent = initialYear;
+                } else if (currYear > initialYear) {
+                    copyright.textContent = `${initialYear}-${currYear}`;
+                }
+            }
+        }
+        updateCopyright(2024);
+    </script>
 </body>
 
 </html>

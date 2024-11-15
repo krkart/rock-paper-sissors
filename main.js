@@ -1,3 +1,5 @@
+'use strict';
+
 let userScore = 0;
 let computerScore = 0;
 let tieCount = 0;
@@ -8,7 +10,10 @@ let compChoice = document.querySelector('.compChoice');
 let userImg = document.querySelector('.userImg');
 let compImg = document.querySelector('.compImg');
 let result = document.querySelector('.result');
+let resultSign = document.querySelector('.resultSign');
 let score = document.querySelector('.score');
+let finalResult = document.getElementById('finalResult');
+let overlay = document.getElementById('overlay');
 let rounds = document.querySelectorAll(".rounds button");
 let pickBtn = document.querySelectorAll(".choices button");
 
@@ -38,48 +43,45 @@ function gameLogic(humanChoice, computerChoice) {
 
 		if (humanChoice === computerChoice) {
 			result.textContent = "Its a tie. No score count for this round";
+			resultSign.innerHTML = "<h3>=</h3>";
 			tieCount++
 		} else if (((humanChoice === "rock") && (computerChoice === "paper")) ||
 			((humanChoice === "paper") && (computerChoice === "sissor")) ||
 			((humanChoice === "sissor") && (computerChoice === "rock"))) {
 			result.textContent = "Computer Won";
+			resultSign.innerHTML = "<h3><</h3>";
 			computerScore++
 		} else {
 			result.textContent = "You Won";
+			resultSign.innerHTML = "<h3>></h3>";
 			userScore++
 		}
 
-		userImg.innerHTML = `<img src="./img/${humanChoice}.png">`;
+		userImg.innerHTML = `<img src="./img/${humanChoice}.png" />`;
 		userChoice.textContent = humanChoice;
-		compImg.innerHTML = `<img src="./img/${computerChoice}.png">`;
+		compImg.innerHTML = `<img src="./img/${computerChoice}.png" />`;
 		compChoice.textContent = computerChoice;
 
 		score.innerHTML = "<p>" + "Your Score = " + userScore + ". Computer Score = " + computerScore + "." + "</p>"
+
+		const h1 = document.createElement("h1");
+		finalResult.appendChild(h1);
 		
 		if ((computerScore === Math.ceil(((roundCount + 1) - tieCount) / 2)) && (computerScore != userScore)) {
-			const computerWin = document.createElement("div");
-			computerWin.classList.add("winner")
-			computerWin.innerHTML = `<h5>Final Result:</h5> <h2>Computer won by ${computerScore - userScore} point!</h2>`
-			score.appendChild(computerWin)
+			h1.textContent = `Computer won by ${computerScore - userScore} point!`;
+			overlay.classList.remove('hide');
 			gameOver = true
-
 		} else if ((userScore === Math.ceil(((roundCount + 1) - tieCount) / 2)) && (userScore != computerScore)) {
-			const userWin = document.createElement("div");
-			userWin.classList.add("winner")
-			userWin.innerHTML = `<h5>Final Result:</h5> <h2>You won by ${userScore - computerScore} point!</h2>`
-			score.appendChild(userWin)
+			h1.textContent = `You won by ${userScore - computerScore} point!`;
+			overlay.classList.remove('hide');
 			gameOver = true
 		} else if ((userScore === Math.ceil(((roundCount + 1) - tieCount) / 2)) && (userScore === computerScore)) {
-			const userWin = document.createElement("div");
-			userWin.classList.add("winner")
-			userWin.innerHTML = `<h5>Final Result:</h5> <h2>It's a tie!</h2>`
-			score.appendChild(userWin)
+			h1.textContent = "Scores level. It's a tie!";
+			overlay.classList.remove('hide');
 			gameOver = true
 		} else if ((computerScore === Math.ceil(((roundCount + 1) - tieCount) / 2)) && (computerScore === userScore)) {
-			const userWin = document.createElement("div");
-			userWin.classList.add("winner")
-			userWin.innerHTML = `<h5>Final Result:</h5> <h2>It's a tie!</h2>`
-			score.appendChild(userWin)
+			h1.textContent = "Scores level. It's a tie!";
+			overlay.classList.remove('hide');
 			gameOver = true
 		}
 }
@@ -95,13 +97,15 @@ pickBtn.forEach((button) => {
 			compImg.innerHTML = "";
 		  compChoice.textContent = '';	
 			result.textContent = '';
-			score.innerHTML = "";
+			resultSign.innerHTML = '<h3>?</h3>'
+			score.innerHTML = "<p>Your score = 0. Computer score = 0.</p>";
 			gameOver = false;		// reset the flag
 			return;
 		}
 
-		let humanChoice = e.target.value;
 		let computerChoice = getCompChoice();
-		gameLogic(humanChoice, computerChoice);
+		// Use currentTarget instead of target if image used inside button
+		// Ref: https://stackoverflow.com/a/45882908/6028958
+		gameLogic(e.currentTarget.value, computerChoice);
 	})
 })
