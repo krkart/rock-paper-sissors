@@ -120,7 +120,7 @@ h5 {
   font-size: 1.2rem;
 }
 
-.gameResult {
+.game-result {
   width: 180px;
   height: 150px;
   margin: 5px 15px;
@@ -130,7 +130,7 @@ h5 {
   color: #000;
 }
 
-.resultSign {
+.result-sign {
   width: 36px;
   height: 36px;
   padding: 0px 9px 18px 9px;

@@ -5,18 +5,19 @@ let computerScore = 0;
 let tieCount = 0;
 let roundCount = 3;
 
-let userChoice = document.querySelector('.userChoice');
-let compChoice = document.querySelector('.compChoice');
-let userImg = document.querySelector('.userImg');
-let compImg = document.querySelector('.compImg');
+let userChoice = document.querySelector('.user-choice');
+let compChoice = document.querySelector('.computer-choice');
+let userImg = document.querySelector('.user-img');
+let computerImg = document.querySelector('.computer-img');
 let result = document.querySelector('.result');
-let resultSign = document.querySelector('.resultSign');
+let resultSign = document.querySelector('.result-sign');
 let score = document.querySelector('.score');
-let finalResult = document.getElementById('finalResult');
+let finalResult = document.getElementById('final-result');
 let overlay = document.getElementById('overlay');
 let rounds = document.querySelectorAll(".rounds button");
-let pickBtn = document.querySelectorAll(".choices button");
+let pickBtn = document.querySelectorAll(".pick-btn");
 
+// Select num of rounds
 rounds.forEach((round) => {
 	round.addEventListener('click', (e) => {
 		roundCount = parseInt(e.target.value)
@@ -37,10 +38,6 @@ function getCompChoice(){
 let gameOver = false
 
 function gameLogic(humanChoice, computerChoice) {
-
-	// Best practice with explanation, Ref: https://stackoverflow.com/a/56909452/6028958
-	// if (e.target.classList.contains("pickBtn")) {
-
 		if (humanChoice === computerChoice) {
 			result.textContent = "Its a tie. No score count for this round";
 			resultSign.innerHTML = "<h3>=</h3>";
@@ -59,7 +56,7 @@ function gameLogic(humanChoice, computerChoice) {
 
 		userImg.innerHTML = `<img src="./img/${humanChoice}.png" />`;
 		userChoice.textContent = humanChoice;
-		compImg.innerHTML = `<img src="./img/${computerChoice}.png" />`;
+		computerImg.innerHTML = `<img src="./img/${computerChoice}.png" />`;
 		compChoice.textContent = computerChoice;
 
 		score.innerHTML = "<p>" + "Your Score = " + userScore + ". Computer Score = " + computerScore + "." + "</p>"
@@ -86,6 +83,9 @@ function gameLogic(humanChoice, computerChoice) {
 		}
 }
 
+// Best practice with explanation, Ref: https://stackoverflow.com/a/56909452/6028958
+// if (e.target.classList.contains("pickBtn")) {
+
 pickBtn.forEach((button) => {
 	button.addEventListener('click', (e) =>{
 		if(gameOver) {
@@ -94,7 +94,7 @@ pickBtn.forEach((button) => {
 			tieCount = 0;
 			userImg.innerHTML = "";
 		  userChoice.textContent = '';
-			compImg.innerHTML = "";
+			computerImg.innerHTML = "";
 		  compChoice.textContent = '';	
 			result.textContent = '';
 			resultSign.innerHTML = '<h3>?</h3>'
